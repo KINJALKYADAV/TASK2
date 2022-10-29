@@ -27,19 +27,19 @@
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: rgb(223, 223, 223);
+	background-color: rgb(255, 255, 255);
 	opacity: 0.9;
 	overflow-x: hidden;
 	text-decoration: none;
-	
 	padding-top: 60px;
 	
 	transition: 0.5s;
 }
 .side-nav{
-	padding: 10px 10px 10 px 30px;
+	padding: 10px 10px 10 px 10px;
 	text-decoration: none;
-	font-size: 22px;
+	font-size: 25px;
+	text-decoration-line: none;
 	color: rgb(232, 229, 229);
 	display: block;
 	transition: 0.3s;
