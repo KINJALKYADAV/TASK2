@@ -1,5 +1,6 @@
 const addBtn = document.querySelector("#addBtn")
 const main = document.querySelector("#main")
+//var bool = true;
 addBtn.addEventListener(
     "click",
     function() {
@@ -21,6 +22,7 @@ const saveNotes = () => {
         localStorage.setItem("notes", JSON.stringify(data))
         console.log(data);
     }
+    
 }
 const addNote = (text = "") => {
     const note = document.createElement("div");
@@ -30,7 +32,7 @@ const addNote = (text = "") => {
          <i class="save fas fa-save"></i>
          <i class="trash fas fa-trash"></i> 
     </div>
-    <textarea>${text}</textarea>
+    <textarea>${text} </textarea>
     `;
 
     note.querySelector(".trash").addEventListener(
@@ -44,6 +46,9 @@ const addNote = (text = "") => {
         "click",
         function() {
             saveNotes()
+            alert (
+                "Notes saved"
+            )
         }
     )
     
@@ -55,9 +60,12 @@ const addNote = (text = "") => {
 (
     function() {
         const lsNotes = JSON.parse(localStorage.getItem("notes"));
-        if (lsNotes === null) {
+        if (lsNotes === null) 
+        {
             addNote()
-        } else {
+        } 
+        else 
+        {
             lsNotes.forEach(
                 (lsNote) => {
                     addNote(lsNote)
@@ -67,11 +75,9 @@ const addNote = (text = "") => {
 
     }
 )()
-function openSlideMenu(){
-    document.getElementById('side-menu').style.width='250px';
-    document.getElementById('main').style.marginLeft='250px';
-} 
-function closeSlideMenu(){
-    document.getElementById('side-menu').style.width='0';
-    document.getElementById('main').style.marginLeft='0';
-} 
+
+
+function dateandtime(date) {
+    const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
